@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Special Gift for Laila (Javeria) 💖</title>
+<title>A Special Gift for Laila (Javeria) ❤️</title>
 
 <style>
 *{box-sizing:border-box}
@@ -19,9 +19,9 @@ body{
   overflow:hidden;
   font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
   background:
-    radial-gradient(circle at 20% 20%,#ffe0ed 0,transparent 35%),
-    radial-gradient(circle at 80% 80%,#e7ddff 0,transparent 40%),
-    linear-gradient(135deg,#fff5f9,#f8f2ff,#eefaff);
+    radial-gradient(circle at 15% 15%,#ffddea 0,transparent 34%),
+    radial-gradient(circle at 85% 85%,#e4dcff 0,transparent 40%),
+    linear-gradient(135deg,#fff5f9,#f8f1ff,#eefaff);
   color:#4a244d;
 }
 
@@ -42,13 +42,13 @@ body{
   width:min(92vw,440px);
   padding:30px 22px;
   border-radius:30px;
-  background:rgba(255,255,255,.78);
+  background:rgba(255,255,255,.80);
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.85);
   box-shadow:
     0 25px 70px rgba(105,55,130,.20),
-    inset 0 1px 0 rgba(255,255,255,.8);
+    inset 0 1px 0 rgba(255,255,255,.9);
   position:relative;
   z-index:5;
 }
@@ -61,6 +61,15 @@ h1{
 p{
   font-size:17px;
   line-height:1.65;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.small{
+  font-size:13px;
+  opacity:.65;
 }
 
 button{
@@ -89,16 +98,30 @@ button:active{
   background:#eee;
 }
 
-.hidden{
-  display:none!important;
+/* SHAIFAN */
+
+.fromShaifan{
+  margin:17px auto;
+  padding:13px 15px;
+  border-radius:20px;
+  background:linear-gradient(
+    135deg,
+    rgba(255,228,239,.8),
+    rgba(239,231,255,.8)
+  );
+  font-weight:800;
+  color:#74305f;
+  box-shadow:0 8px 25px rgba(150,70,130,.10);
 }
 
-.small{
-  font-size:13px;
-  opacity:.65;
+.shaifanName{
+  font-size:24px;
+  color:#d93672;
+  font-weight:950;
+  margin-top:4px;
 }
 
-/* ---------------- GIFT ---------------- */
+/* GIFT */
 
 .giftWrap{
   position:relative;
@@ -192,7 +215,7 @@ button:active{
   to{transform:scale(1.15);opacity:1}
 }
 
-/* ---------------- FADE ---------------- */
+/* CARD REVEAL */
 
 .reveal{
   animation:cardReveal 1s cubic-bezier(.2,.8,.2,1);
@@ -209,7 +232,7 @@ button:active{
   }
 }
 
-/* ---------------- CINEMATIC RESULT ---------------- */
+/* CINEMATIC LOADING */
 
 #resultLoading{
   position:fixed;
@@ -230,8 +253,8 @@ button:active{
 }
 
 .loadingHeart{
-  width:100px;
-  height:100px;
+  width:105px;
+  height:105px;
   margin:0 auto 28px;
   display:flex;
   align-items:center;
@@ -245,12 +268,12 @@ button:active{
 }
 
 .loadingHeart span{
-  font-size:52px;
+  font-size:55px;
 }
 
 .loadingTitle{
-  font-size:27px;
-  font-weight:900;
+  font-size:28px;
+  font-weight:950;
   color:#d93672;
 }
 
@@ -287,8 +310,14 @@ button:active{
 }
 
 @keyframes dot{
-  0%,100%{opacity:.25;transform:translateY(0)}
-  50%{opacity:1;transform:translateY(-7px)}
+  0%,100%{
+    opacity:.25;
+    transform:translateY(0);
+  }
+  50%{
+    opacity:1;
+    transform:translateY(-7px);
+  }
 }
 
 @keyframes loadingAppear{
@@ -296,7 +325,7 @@ button:active{
   to{opacity:1}
 }
 
-/* ---------------- RESULT ---------------- */
+/* FINAL */
 
 #final{
   animation:finalIn 1.2s ease;
@@ -329,7 +358,7 @@ button:active{
 }
 
 .name{
-  font-size:28px;
+  font-size:29px;
   font-weight:950;
   color:#d93672;
   margin-bottom:17px;
@@ -343,9 +372,11 @@ button:active{
   padding:24px 15px;
   border-radius:28px;
   background:
-    linear-gradient(135deg,
+    linear-gradient(
+      135deg,
       rgba(255,245,250,.95),
-      rgba(246,239,255,.95));
+      rgba(246,239,255,.95)
+    );
   border:2px solid rgba(255,92,147,.18);
   box-shadow:
     0 15px 45px rgba(232,62,123,.16),
@@ -377,8 +408,7 @@ button:active{
   font-weight:1000;
   color:#e83e7b;
   margin:12px 0 7px;
-  text-shadow:
-    0 5px 20px rgba(232,62,123,.25);
+  text-shadow:0 5px 20px rgba(232,62,123,.25);
 }
 
 .marks.pop{
@@ -430,7 +460,7 @@ button:active{
   letter-spacing:4px;
 }
 
-/* ---------------- PARTICLES ---------------- */
+/* PARTICLES */
 
 .particle{
   position:fixed;
@@ -485,7 +515,6 @@ button:active{
 
 <body>
 
-
 <!-- ================= INTRO ================= -->
 
 <div id="intro" class="screen">
@@ -497,17 +526,28 @@ button:active{
     </div>
 
     <h1>
-      Someone sent you a gift!
+      A Special Gift For You 💖
     </h1>
 
     <p>
-      <b>Your Brother Shaifan</b>
-      has prepared something special for you. 💝
+      Someone who is genuinely proud of you
+      has prepared a little surprise. 🌸
+    </p>
+
+    <div class="fromShaifan">
+      A gift from
+      <div class="shaifanName">
+        Your Brother Shaifan ❤️
+      </div>
+    </div>
+
+    <p>
+      Especially for
+      <b>Laila (Javeria)</b> 🌷
     </p>
 
     <p>
-      A little surprise...
-      made especially for <b>Laila</b>. 🌸
+      Are you ready to open it?
     </p>
 
     <button class="yes" onclick="openGift()">
@@ -544,13 +584,20 @@ button:active{
     </div>
 
     <h1>
-      🎁 A little surprise for Laila 🌸
+      🎁 For Laila 🌸
     </h1>
 
     <p>
       This little box is holding
-      something made just for you. 💖
+      something made especially for you. 💖
     </p>
+
+    <div class="fromShaifan">
+      Prepared with love by
+      <div class="shaifanName">
+        Your Brother Shaifan ❤️
+      </div>
+    </div>
 
     <p>
       <b>Tap the gift to open it...</b>
@@ -562,7 +609,7 @@ button:active{
 </div>
 
 
-<!-- ================= LOADING ================= -->
+<!-- ================= CINEMATIC LOADING ================= -->
 
 <div id="resultLoading" class="hidden">
 
@@ -577,7 +624,8 @@ button:active{
     </div>
 
     <div class="loadingText">
-      Preparing something beautiful for Laila
+      Shaifan has a little surprise
+      waiting for Laila...
     </div>
 
     <div class="loadingDots">
@@ -591,7 +639,7 @@ button:active{
 </div>
 
 
-<!-- ================= FINAL RESULT ================= -->
+<!-- ================= FINAL ================= -->
 
 <div id="final" class="screen hidden">
 
@@ -616,7 +664,6 @@ button:active{
       effort, patience and hard work. 🥹💖
     </p>
 
-
     <!-- RESULT -->
 
     <div class="resultBox">
@@ -638,7 +685,6 @@ button:active{
       </div>
 
     </div>
-
 
     <div class="message">
 
@@ -667,8 +713,17 @@ button:active{
         are worth celebrating. ❤️
       </p>
 
-    </div>
+      <div class="fromShaifan">
+        No matter where your journey takes you,
+        <br>
+        I'll always be cheering for you. ❤️
 
+        <div class="shaifanName">
+          — Your Brother Shaifan 🌸
+        </div>
+      </div>
+
+    </div>
 
     <div class="signature">
       With lots of love and best wishes,<br>
@@ -764,14 +819,10 @@ function revealMessage(){
 
   loading.classList.remove("hidden");
 
-  /*
-    Let the emotional loading scene
-    breathe for a moment.
-  */
-
   setTimeout(()=>{
 
-    loading.style.animation="fadeOut .8s ease forwards";
+    loading.style.animation=
+      "fadeOut .8s ease forwards";
 
     setTimeout(()=>{
 
@@ -792,7 +843,7 @@ function revealMessage(){
 }
 
 
-/* ================= MARKS ================= */
+/* ================= MARKS ANIMATION ================= */
 
 function animateMarks(){
 
@@ -813,10 +864,6 @@ function animateMarks(){
         (now-start)/duration,
         1
       );
-
-    /*
-      Smooth dramatic easing
-    */
 
     const eased=
       1-Math.pow(1-progress,3);
@@ -848,7 +895,7 @@ function animateMarks(){
 }
 
 
-/* ================= BIG CELEBRATION ================= */
+/* ================= CELEBRATION ================= */
 
 function bigCelebration(){
 
@@ -860,7 +907,6 @@ function bigCelebration(){
     );
 
   }
-
 }
 
 
@@ -876,7 +922,6 @@ function resultBurst(){
     );
 
   }
-
 }
 
 
@@ -932,7 +977,7 @@ function createBurstParticle(){
 }
 
 
-/* ================= FLOATING PARTICLES ================= */
+/* ================= FLOATING HEARTS ================= */
 
 function floatingHearts(){
 
