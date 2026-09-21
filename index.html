@@ -3,133 +3,985 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Gift for Laila 🎁</title>
+<title>A Special Gift for Laila (Javeria) 💖</title>
+
 <style>
 *{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  width:100%;
+  min-height:100%;
+}
+
 body{
-  margin:0; min-height:100vh; overflow:hidden;
-  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-  background:linear-gradient(135deg,#fff0f6,#f7efff,#eaf7ff);
-  color:#4a244d; display:flex; justify-content:center; align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%,#ffe0ed 0,transparent 35%),
+    radial-gradient(circle at 80% 80%,#e7ddff 0,transparent 40%),
+    linear-gradient(135deg,#fff5f9,#f8f2ff,#eefaff);
+  color:#4a244d;
 }
-.screen{width:100%; max-width:520px; min-height:100vh; padding:28px 20px;
-  display:flex; align-items:center; justify-content:center; text-align:center; position:relative}
+
+.screen{
+  width:100%;
+  max-width:520px;
+  min-height:100vh;
+  margin:auto;
+  padding:25px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
 .card{
-  width:min(92vw,430px); padding:30px 22px; border-radius:28px;
-  background:rgba(255,255,255,.78); backdrop-filter:blur(10px);
-  box-shadow:0 18px 55px rgba(125,65,130,.18); position:relative; z-index:2;
+  width:min(92vw,440px);
+  padding:30px 22px;
+  border-radius:30px;
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:
+    0 25px 70px rgba(105,55,130,.20),
+    inset 0 1px 0 rgba(255,255,255,.8);
+  position:relative;
+  z-index:5;
 }
-h1{font-size:30px;margin:0 0 12px}
-p{font-size:17px;line-height:1.6}
+
+h1{
+  font-size:30px;
+  margin:0 0 12px;
+}
+
+p{
+  font-size:17px;
+  line-height:1.65;
+}
+
 button{
-  border:0; border-radius:999px; padding:13px 25px; margin:8px;
-  font-size:17px; font-weight:700; cursor:pointer;
-  box-shadow:0 7px 18px rgba(0,0,0,.12); transition:.25s;
+  border:0;
+  border-radius:999px;
+  padding:14px 27px;
+  margin:8px;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 9px 22px rgba(0,0,0,.12);
+  transition:.25s;
 }
-.yes{background:#ff5c93;color:white}.no{background:#eee;color:#555;position:relative}
-.hidden{display:none}
+
+button:active{
+  transform:scale(.93);
+}
+
+.yes{
+  color:white;
+  background:linear-gradient(135deg,#ff477f,#ff78a5);
+}
+
+.no{
+  color:#555;
+  background:#eee;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.small{
+  font-size:13px;
+  opacity:.65;
+}
+
+/* ---------------- GIFT ---------------- */
+
+.giftWrap{
+  position:relative;
+  width:190px;
+  height:185px;
+  margin:20px auto 8px;
+}
+
+.giftGlow{
+  position:absolute;
+  width:180px;
+  height:180px;
+  left:5px;
+  top:5px;
+  border-radius:50%;
+  background:rgba(255,92,147,.22);
+  filter:blur(25px);
+  animation:glow 1.8s infinite alternate;
+}
+
 .gift{
-  width:150px;height:120px;background:#ff5c93;border-radius:8px;
-  margin:28px auto 15px;position:relative;cursor:pointer;
+  position:absolute;
+  left:20px;
+  top:42px;
+  width:150px;
+  height:120px;
+  background:linear-gradient(135deg,#ff5c93,#ff3f7b);
+  border-radius:9px;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(255,63,123,.28);
   animation:bounce 1.6s infinite;
 }
-.gift:before{content:"";position:absolute;left:58px;top:0;width:30px;height:120px;background:#ffd166}
-.gift:after{content:"";position:absolute;left:0;top:30px;width:150px;height:25px;background:#ffd166}
-.lid{position:absolute;left:-8px;top:-24px;width:166px;height:35px;background:#ff477f;border-radius:8px}
-@keyframes bounce{50%{transform:translateY(-9px)}}
-.reveal{animation:fade .9s ease}
-@keyframes fade{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
-.heart,.flower{position:fixed;pointer-events:none;z-index:1;animation:float 5s linear forwards}
-.heart{font-size:25px}.flower{font-size:28px}
-@keyframes float{0%{transform:translateY(105vh) rotate(0);opacity:0}
-15%{opacity:1}100%{transform:translateY(-15vh) rotate(360deg);opacity:0}}
-.small{font-size:14px;opacity:.7}
-#final h1{color:#e83e7b;font-size:34px}
-.signature{margin-top:20px;font-weight:800;font-size:19px}
+
+.gift:before{
+  content:"";
+  position:absolute;
+  left:58px;
+  top:0;
+  width:30px;
+  height:120px;
+  background:#ffd166;
+}
+
+.gift:after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:30px;
+  width:150px;
+  height:25px;
+  background:#ffd166;
+}
+
+.lid{
+  position:absolute;
+  left:-8px;
+  top:-25px;
+  width:166px;
+  height:36px;
+  background:#ff477f;
+  border-radius:9px;
+}
+
+.lid:before,
+.lid:after{
+  content:"";
+  position:absolute;
+  width:42px;
+  height:25px;
+  border:8px solid #ffd166;
+  border-radius:50%;
+  top:-23px;
+}
+
+.lid:before{
+  left:42px;
+  transform:rotate(25deg);
+}
+
+.lid:after{
+  right:42px;
+  transform:rotate(-25deg);
+}
+
+@keyframes bounce{
+  50%{transform:translateY(-10px)}
+}
+
+@keyframes glow{
+  from{transform:scale(.9);opacity:.55}
+  to{transform:scale(1.15);opacity:1}
+}
+
+/* ---------------- FADE ---------------- */
+
+.reveal{
+  animation:cardReveal 1s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes cardReveal{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.88);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* ---------------- CINEMATIC RESULT ---------------- */
+
+#resultLoading{
+  position:fixed;
+  inset:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:25px;
+  background:
+    radial-gradient(circle,#fff7fb,#f4edff 55%,#eaf5ff);
+  animation:loadingAppear .7s ease;
+}
+
+.loadingBox{
+  width:min(90vw,390px);
+}
+
+.loadingHeart{
+  width:100px;
+  height:100px;
+  margin:0 auto 28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.75);
+  box-shadow:
+    0 0 0 0 rgba(255,75,130,.25),
+    0 15px 45px rgba(190,80,150,.18);
+  animation:heartbeat 1.15s infinite;
+}
+
+.loadingHeart span{
+  font-size:52px;
+}
+
+.loadingTitle{
+  font-size:27px;
+  font-weight:900;
+  color:#d93672;
+}
+
+.loadingText{
+  font-size:16px;
+  opacity:.7;
+  margin-top:8px;
+}
+
+.loadingDots{
+  margin-top:18px;
+  font-size:24px;
+  letter-spacing:6px;
+}
+
+.loadingDots span{
+  display:inline-block;
+  animation:dot 1.2s infinite;
+}
+
+.loadingDots span:nth-child(2){
+  animation-delay:.2s;
+}
+
+.loadingDots span:nth-child(3){
+  animation-delay:.4s;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  15%{transform:scale(1.16)}
+  30%{transform:scale(1)}
+  45%{transform:scale(1.1)}
+}
+
+@keyframes dot{
+  0%,100%{opacity:.25;transform:translateY(0)}
+  50%{opacity:1;transform:translateY(-7px)}
+}
+
+@keyframes loadingAppear{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ---------------- RESULT ---------------- */
+
+#final{
+  animation:finalIn 1.2s ease;
+}
+
+@keyframes finalIn{
+  from{
+    opacity:0;
+    transform:scale(.92);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.resultTop{
+  font-size:48px;
+  animation:softFloat 2.5s infinite ease-in-out;
+}
+
+@keyframes softFloat{
+  50%{transform:translateY(-7px)}
+}
+
+#final h1{
+  color:#e83e7b;
+  font-size:34px;
+  margin-bottom:3px;
+}
+
+.name{
+  font-size:28px;
+  font-weight:950;
+  color:#d93672;
+  margin-bottom:17px;
+  text-shadow:0 3px 15px rgba(217,54,114,.18);
+}
+
+.resultBox{
+  position:relative;
+  overflow:hidden;
+  margin:20px auto;
+  padding:24px 15px;
+  border-radius:28px;
+  background:
+    linear-gradient(135deg,
+      rgba(255,245,250,.95),
+      rgba(246,239,255,.95));
+  border:2px solid rgba(255,92,147,.18);
+  box-shadow:
+    0 15px 45px rgba(232,62,123,.16),
+    inset 0 0 30px rgba(255,255,255,.8);
+}
+
+.resultBox:before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,105,160,.13);
+  top:-100px;
+  left:-90px;
+}
+
+.resultTitle{
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:2px;
+  opacity:.65;
+}
+
+.marks{
+  position:relative;
+  font-size:72px;
+  line-height:1;
+  font-weight:1000;
+  color:#e83e7b;
+  margin:12px 0 7px;
+  text-shadow:
+    0 5px 20px rgba(232,62,123,.25);
+}
+
+.marks.pop{
+  animation:marksPop .8s cubic-bezier(.2,1.5,.4,1);
+}
+
+@keyframes marksPop{
+  0%{
+    transform:scale(.5);
+    opacity:.3;
+  }
+  70%{
+    transform:scale(1.18);
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.outOf{
+  font-size:16px;
+  opacity:.65;
+}
+
+.celebrate{
+  font-size:25px;
+  margin-top:12px;
+}
+
+.message{
+  margin-top:20px;
+}
+
+.message p{
+  font-size:16px;
+}
+
+.signature{
+  margin-top:22px;
+  font-weight:900;
+  font-size:19px;
+  color:#65305f;
+}
+
+.footerHeart{
+  margin-top:13px;
+  font-size:24px;
+  letter-spacing:4px;
+}
+
+/* ---------------- PARTICLES ---------------- */
+
+.particle{
+  position:fixed;
+  left:50%;
+  top:50%;
+  pointer-events:none;
+  z-index:100;
+  font-size:24px;
+  animation:particleFly 3.8s linear forwards;
+}
+
+@keyframes particleFly{
+  0%{
+    transform:translate(-50%,-50%) scale(.3) rotate(0);
+    opacity:0;
+  }
+  10%{
+    opacity:1;
+  }
+  100%{
+    transform:
+      translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+      )
+      scale(1)
+      rotate(540deg);
+    opacity:0;
+  }
+}
+
+.floatParticle{
+  position:fixed;
+  pointer-events:none;
+  z-index:2;
+  animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+  from{
+    transform:translateY(105vh) rotate(0);
+    opacity:0;
+  }
+  15%{opacity:1}
+  to{
+    transform:translateY(-15vh) rotate(360deg);
+    opacity:0;
+  }
+}
 </style>
 </head>
+
 <body>
 
+
+<!-- ================= INTRO ================= -->
+
 <div id="intro" class="screen">
-  <div class="card">
-    <div style="font-size:58px">🎁</div>
-    <h1>Someone sent you a gift!</h1>
-    <p><b>Your Brother Shaifan</b> sent you a special gift. 💝</p>
-    <p>Do you want to open it?</p>
-    <button class="yes" onclick="openGift()">Yes 💖</button>
-    <button id="noBtn" class="no" onclick="moveNo()">No 🙈</button>
-    <p class="small">Hint: There is only one correct choice 😄</p>
+
+  <div class="card reveal">
+
+    <div style="font-size:62px">
+      🎁
+    </div>
+
+    <h1>
+      Someone sent you a gift!
+    </h1>
+
+    <p>
+      <b>Your Brother Shaifan</b>
+      has prepared something special for you. 💝
+    </p>
+
+    <p>
+      A little surprise...
+      made especially for <b>Laila</b>. 🌸
+    </p>
+
+    <button class="yes" onclick="openGift()">
+      Yes 💖
+    </button>
+
+    <button id="noBtn" class="no" onclick="moveNo()">
+      No 🙈
+    </button>
+
+    <p class="small">
+      Hint: There is only one correct choice 😄
+    </p>
+
   </div>
+
 </div>
+
+
+<!-- ================= GIFT ================= -->
 
 <div id="giftScreen" class="screen hidden">
+
   <div class="card reveal">
-    <div class="gift" onclick="revealMessage()">
-      <div class="lid"></div>
+
+    <div class="giftWrap">
+
+      <div class="giftGlow"></div>
+
+      <div class="gift" onclick="revealMessage()">
+        <div class="lid"></div>
+      </div>
+
     </div>
-    <h1>🎁 A little surprise for Laila 🌸</h1>
-    <p>Tap the gift box to open your surprise!</p>
+
+    <h1>
+      🎁 A little surprise for Laila 🌸
+    </h1>
+
+    <p>
+      This little box is holding
+      something made just for you. 💖
+    </p>
+
+    <p>
+      <b>Tap the gift to open it...</b>
+      ✨
+    </p>
+
   </div>
+
 </div>
+
+
+<!-- ================= LOADING ================= -->
+
+<div id="resultLoading" class="hidden">
+
+  <div class="loadingBox">
+
+    <div class="loadingHeart">
+      <span>💖</span>
+    </div>
+
+    <div class="loadingTitle">
+      A special moment...
+    </div>
+
+    <div class="loadingText">
+      Preparing something beautiful for Laila
+    </div>
+
+    <div class="loadingDots">
+      <span>•</span>
+      <span>•</span>
+      <span>•</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= FINAL RESULT ================= -->
 
 <div id="final" class="screen hidden">
-  <div class="card reveal">
-    <div style="font-size:58px">🌸💐💖🌷</div>
-    <h1>Congratulations, Laila! 🎓✨</h1>
+
+  <div class="card">
+
+    <div class="resultTop">
+      🌸💐💖🌷✨
+    </div>
+
+    <h1>
+      Congratulations! 🎓
+    </h1>
+
+    <div class="name">
+      Laila (Javeria) ❤️
+    </div>
+
     <p>
-      Your 11th Class result is a special moment! 🥳<br>
-      Whatever the numbers say, your hard work and effort are something to be proud of.
+      Today is more than just a result...
+      <br>
+      it's a little celebration of your
+      effort, patience and hard work. 🥹💖
     </p>
-    <p>
-      🌷 May your next chapter bring you more success,<br>
-      happiness, confidence and beautiful memories. ✨
-    </p>
-    <p><b>Keep shining and keep believing in yourself! 💕</b></p>
-    <div class="signature">With best wishes,<br>🌸 Your Brother Shaifan 🎁</div>
+
+
+    <!-- RESULT -->
+
+    <div class="resultBox">
+
+      <div class="resultTitle">
+        ✨ 11TH CLASS RESULT ✨
+      </div>
+
+      <div id="marks" class="marks">
+        0
+      </div>
+
+      <div class="outOf">
+        marks
+      </div>
+
+      <div class="celebrate">
+        🎉 ✨ 💖 ✨ 🎉
+      </div>
+
+    </div>
+
+
+    <div class="message">
+
+      <p>
+        🌷 May this result be the beginning
+        of an even more beautiful journey.
+      </p>
+
+      <p>
+        May you always have the courage
+        to chase your dreams,
+        the confidence to believe in yourself,
+        and the strength to keep moving forward. ✨
+      </p>
+
+      <p>
+        <b>
+          Keep smiling, keep shining,
+          and never stop believing in yourself. 💕
+        </b>
+      </p>
+
+      <p>
+        And whenever you look back at this day,
+        remember that your happiness and success
+        are worth celebrating. ❤️
+      </p>
+
+    </div>
+
+
+    <div class="signature">
+      With lots of love and best wishes,<br>
+      🌸 Your Brother Shaifan 🎁
+    </div>
+
+    <div class="footerHeart">
+      ❤️ ❤️ ❤️
+    </div>
+
   </div>
+
 </div>
 
+
 <script>
+
 let noCount=0;
 
+
+/* ================= NO BUTTON ================= */
+
 function moveNo(){
+
   const b=document.getElementById("noBtn");
+
   noCount++;
-  // Move the button to a random safe position inside the viewport.
+
   b.style.position="fixed";
-  const pad=25;
-  const maxX=window.innerWidth-b.offsetWidth-pad;
-  const maxY=window.innerHeight-b.offsetHeight-pad;
-  b.style.left=Math.max(pad,Math.random()*maxX)+"px";
-  b.style.top=Math.max(pad,Math.random()*maxY)+"px";
-  b.textContent=noCount<4 ? "No 🙈" : "Still no? 😄";
+
+  const pad=20;
+
+  const maxX=
+    Math.max(
+      pad,
+      window.innerWidth-b.offsetWidth-pad
+    );
+
+  const maxY=
+    Math.max(
+      pad,
+      window.innerHeight-b.offsetHeight-pad
+    );
+
+  b.style.left=
+    Math.max(
+      pad,
+      Math.random()*maxX
+    )+"px";
+
+  b.style.top=
+    Math.max(
+      pad,
+      Math.random()*maxY
+    )+"px";
+
+  b.textContent=
+    noCount<4
+      ? "No 🙈"
+      : "Still no? 😄";
 }
+
+
+/* ================= OPEN GIFT ================= */
 
 function openGift(){
-  document.getElementById("intro").classList.add("hidden");
-  document.getElementById("giftScreen").classList.remove("hidden");
-  createParticles();
+
+  document
+    .getElementById("intro")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("giftScreen")
+    .classList
+    .remove("hidden");
+
+  floatingHearts();
 }
+
+
+/* ================= REVEAL ================= */
 
 function revealMessage(){
-  document.getElementById("giftScreen").classList.add("hidden");
-  document.getElementById("final").classList.remove("hidden");
-  createParticles();
-  for(let i=0;i<25;i++) setTimeout(createParticle,i*90);
+
+  document
+    .getElementById("giftScreen")
+    .classList
+    .add("hidden");
+
+  const loading=
+    document.getElementById("resultLoading");
+
+  loading.classList.remove("hidden");
+
+  /*
+    Let the emotional loading scene
+    breathe for a moment.
+  */
+
+  setTimeout(()=>{
+
+    loading.style.animation="fadeOut .8s ease forwards";
+
+    setTimeout(()=>{
+
+      loading.classList.add("hidden");
+
+      document
+        .getElementById("final")
+        .classList
+        .remove("hidden");
+
+      animateMarks();
+
+      bigCelebration();
+
+    },750);
+
+  },3000);
 }
 
-function createParticle(){
-  const el=document.createElement("div");
-  el.className=Math.random()>.45?"heart":"flower";
-  el.textContent=Math.random()>.45?"💖":"🌸";
-  el.style.left=Math.random()*100+"vw";
-  el.style.animationDuration=(3+Math.random()*4)+"s";
+
+/* ================= MARKS ================= */
+
+function animateMarks(){
+
+  const element=
+    document.getElementById("marks");
+
+  const target=460;
+
+  const duration=2600;
+
+  const start=
+    performance.now();
+
+  function update(now){
+
+    const progress=
+      Math.min(
+        (now-start)/duration,
+        1
+      );
+
+    /*
+      Smooth dramatic easing
+    */
+
+    const eased=
+      1-Math.pow(1-progress,3);
+
+    const current=
+      Math.floor(eased*target);
+
+    element.textContent=current;
+
+    if(progress<1){
+
+      requestAnimationFrame(update);
+
+    }else{
+
+      element.textContent=target;
+
+      element.classList.add("pop");
+
+      setTimeout(()=>{
+        resultBurst();
+      },500);
+
+    }
+
+  }
+
+  requestAnimationFrame(update);
+}
+
+
+/* ================= BIG CELEBRATION ================= */
+
+function bigCelebration(){
+
+  for(let i=0;i<30;i++){
+
+    setTimeout(
+      floatingHearts,
+      i*100
+    );
+
+  }
+
+}
+
+
+/* ================= RESULT BURST ================= */
+
+function resultBurst(){
+
+  for(let i=0;i<65;i++){
+
+    setTimeout(
+      createBurstParticle,
+      i*35
+    );
+
+  }
+
+}
+
+
+/* ================= BURST PARTICLE ================= */
+
+function createBurstParticle(){
+
+  const el=
+    document.createElement("div");
+
+  el.className="particle";
+
+  const icons=[
+    "💖",
+    "❤️",
+    "🌸",
+    "🌷",
+    "✨",
+    "💫",
+    "🎉",
+    "🥳"
+  ];
+
+  el.textContent=
+    icons[
+      Math.floor(
+        Math.random()*icons.length
+      )
+    ];
+
+  const angle=
+    Math.random()*Math.PI*2;
+
+  const distance=
+    150+Math.random()*300;
+
+  el.style.setProperty(
+    "--x",
+    Math.cos(angle)*distance+"px"
+  );
+
+  el.style.setProperty(
+    "--y",
+    Math.sin(angle)*distance+"px"
+  );
+
   document.body.appendChild(el);
-  setTimeout(()=>el.remove(),7000);
+
+  setTimeout(
+    ()=>el.remove(),
+    4000
+  );
 }
-function createParticles(){
-  for(let i=0;i<18;i++) setTimeout(createParticle,i*120);
+
+
+/* ================= FLOATING PARTICLES ================= */
+
+function floatingHearts(){
+
+  const el=
+    document.createElement("div");
+
+  el.className="floatParticle";
+
+  const icons=[
+    "💖",
+    "❤️",
+    "🌸",
+    "🌷",
+    "✨",
+    "💫"
+  ];
+
+  el.textContent=
+    icons[
+      Math.floor(
+        Math.random()*icons.length
+      )
+    ];
+
+  el.style.left=
+    Math.random()*100+"vw";
+
+  el.style.fontSize=
+    (18+Math.random()*20)+"px";
+
+  el.style.animationDuration=
+    (4+Math.random()*4)+"s";
+
+  document.body.appendChild(el);
+
+  setTimeout(
+    ()=>el.remove(),
+    8000
+  );
 }
+
 </script>
+
+<style>
+@keyframes fadeOut{
+  from{opacity:1}
+  to{opacity:0}
+}
+</style>
+
 </body>
 </html>
