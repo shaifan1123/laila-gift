@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Gift for Laila 🎁</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:linear-gradient(135deg,#fff0f6,#f7efff,#eaf7ff);
+  color:#4a244d; display:flex; justify-content:center; align-items:center;
+}
+.screen{width:100%; max-width:520px; min-height:100vh; padding:28px 20px;
+  display:flex; align-items:center; justify-content:center; text-align:center; position:relative}
+.card{
+  width:min(92vw,430px); padding:30px 22px; border-radius:28px;
+  background:rgba(255,255,255,.78); backdrop-filter:blur(10px);
+  box-shadow:0 18px 55px rgba(125,65,130,.18); position:relative; z-index:2;
+}
+h1{font-size:30px;margin:0 0 12px}
+p{font-size:17px;line-height:1.6}
+button{
+  border:0; border-radius:999px; padding:13px 25px; margin:8px;
+  font-size:17px; font-weight:700; cursor:pointer;
+  box-shadow:0 7px 18px rgba(0,0,0,.12); transition:.25s;
+}
+.yes{background:#ff5c93;color:white}.no{background:#eee;color:#555;position:relative}
+.hidden{display:none}
+.gift{
+  width:150px;height:120px;background:#ff5c93;border-radius:8px;
+  margin:28px auto 15px;position:relative;cursor:pointer;
+  animation:bounce 1.6s infinite;
+}
+.gift:before{content:"";position:absolute;left:58px;top:0;width:30px;height:120px;background:#ffd166}
+.gift:after{content:"";position:absolute;left:0;top:30px;width:150px;height:25px;background:#ffd166}
+.lid{position:absolute;left:-8px;top:-24px;width:166px;height:35px;background:#ff477f;border-radius:8px}
+@keyframes bounce{50%{transform:translateY(-9px)}}
+.reveal{animation:fade .9s ease}
+@keyframes fade{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.heart,.flower{position:fixed;pointer-events:none;z-index:1;animation:float 5s linear forwards}
+.heart{font-size:25px}.flower{font-size:28px}
+@keyframes float{0%{transform:translateY(105vh) rotate(0);opacity:0}
+15%{opacity:1}100%{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+.small{font-size:14px;opacity:.7}
+#final h1{color:#e83e7b;font-size:34px}
+.signature{margin-top:20px;font-weight:800;font-size:19px}
+</style>
+</head>
+<body>
+
+<div id="intro" class="screen">
+  <div class="card">
+    <div style="font-size:58px">🎁</div>
+    <h1>Someone sent you a gift!</h1>
+    <p><b>Your Brother Shaifan</b> sent you a special gift. 💝</p>
+    <p>Do you want to open it?</p>
+    <button class="yes" onclick="openGift()">Yes 💖</button>
+    <button id="noBtn" class="no" onclick="moveNo()">No 🙈</button>
+    <p class="small">Hint: There is only one correct choice 😄</p>
+  </div>
+</div>
+
+<div id="giftScreen" class="screen hidden">
+  <div class="card reveal">
+    <div class="gift" onclick="revealMessage()">
+      <div class="lid"></div>
+    </div>
+    <h1>🎁 A little surprise for Laila 🌸</h1>
+    <p>Tap the gift box to open your surprise!</p>
+  </div>
+</div>
+
+<div id="final" class="screen hidden">
+  <div class="card reveal">
+    <div style="font-size:58px">🌸💐💖🌷</div>
+    <h1>Congratulations, Laila! 🎓✨</h1>
+    <p>
+      Your 11th Class result is a special moment! 🥳<br>
+      Whatever the numbers say, your hard work and effort are something to be proud of.
+    </p>
+    <p>
+      🌷 May your next chapter bring you more success,<br>
+      happiness, confidence and beautiful memories. ✨
+    </p>
+    <p><b>Keep shining and keep believing in yourself! 💕</b></p>
+    <div class="signature">With best wishes,<br>🌸 Your Brother Shaifan 🎁</div>
+  </div>
+</div>
+
+<script>
+let noCount=0;
+
+function moveNo(){
+  const b=document.getElementById("noBtn");
+  noCount++;
+  // Move the button to a random safe position inside the viewport.
+  b.style.position="fixed";
+  const pad=25;
+  const maxX=window.innerWidth-b.offsetWidth-pad;
+  const maxY=window.innerHeight-b.offsetHeight-pad;
+  b.style.left=Math.max(pad,Math.random()*maxX)+"px";
+  b.style.top=Math.max(pad,Math.random()*maxY)+"px";
+  b.textContent=noCount<4 ? "No 🙈" : "Still no? 😄";
+}
+
+function openGift(){
+  document.getElementById("intro").classList.add("hidden");
+  document.getElementById("giftScreen").classList.remove("hidden");
+  createParticles();
+}
+
+function revealMessage(){
+  document.getElementById("giftScreen").classList.add("hidden");
+  document.getElementById("final").classList.remove("hidden");
+  createParticles();
+  for(let i=0;i<25;i++) setTimeout(createParticle,i*90);
+}
+
+function createParticle(){
+  const el=document.createElement("div");
+  el.className=Math.random()>.45?"heart":"flower";
+  el.textContent=Math.random()>.45?"💖":"🌸";
+  el.style.left=Math.random()*100+"vw";
+  el.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),7000);
+}
+function createParticles(){
+  for(let i=0;i<18;i++) setTimeout(createParticle,i*120);
+}
+</script>
+</body>
+</html>
