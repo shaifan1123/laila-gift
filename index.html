@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 <title>A Special Gift for Laila 🎁</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html,body{
   margin:0;
@@ -24,11 +21,7 @@ body{
   color:#4a244d;
 }
 
-.hidden{
-  display:none !important;
-}
-
-/* ================= SCREEN ================= */
+.hidden{display:none!important}
 
 .screen{
   width:100%;
@@ -42,31 +35,23 @@ body{
   overflow-y:auto;
 }
 
-/* ================= CARD ================= */
-
 .card{
   width:min(92vw,430px);
   max-height:calc(100dvh - 40px);
   overflow-y:auto;
   padding:27px 20px;
   border-radius:28px;
-
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.84);
   backdrop-filter:blur(14px);
-
   box-shadow:
     0 20px 60px rgba(100,40,120,.20),
     inset 0 0 0 1px rgba(255,255,255,.7);
-
   position:relative;
-  z-index:5;
-
+  z-index:20;
   scrollbar-width:none;
 }
 
-.card::-webkit-scrollbar{
-  display:none;
-}
+.card::-webkit-scrollbar{display:none}
 
 h1{
   font-size:clamp(25px,7vw,34px);
@@ -78,8 +63,6 @@ p{
   line-height:1.6;
 }
 
-/* ================= BUTTONS ================= */
-
 button{
   border:0;
   border-radius:999px;
@@ -89,12 +72,9 @@ button{
   font-weight:800;
   cursor:pointer;
   box-shadow:0 8px 20px rgba(0,0,0,.13);
-  transition:.25s;
 }
 
-button:active{
-  transform:scale(.94);
-}
+button:active{transform:scale(.94)}
 
 .yes{
   background:linear-gradient(135deg,#ff4f91,#ff79ae);
@@ -102,15 +82,15 @@ button:active{
 }
 
 .no{
-  background:#eeeeee;
+  background:#eee;
   color:#555;
   position:relative;
 }
 
-/* ================= GIFT BOX ================= */
+/* GIFT */
 
 .gift-wrap{
-  margin:32px auto 20px;
+  margin:30px auto 20px;
   width:170px;
   height:150px;
   display:flex;
@@ -125,13 +105,8 @@ button:active{
   border-radius:9px;
   position:relative;
   cursor:pointer;
-
-  box-shadow:
-    0 15px 35px rgba(255,70,140,.30);
-
-  animation:
-    giftBounce 1.7s infinite,
-    giftGlow 2s infinite alternate;
+  box-shadow:0 15px 35px rgba(255,70,140,.35);
+  animation:giftBounce 1.7s infinite,giftGlow 2s infinite alternate;
 }
 
 .gift:before{
@@ -164,44 +139,16 @@ button:active{
   border-radius:9px;
 }
 
-.lid:before,
-.lid:after{
-  content:"";
-  position:absolute;
-  background:#ffd65a;
-}
-
-.lid:before{
-  width:30px;
-  height:35px;
-  left:68px;
-}
-
-.lid:after{
-  width:45px;
-  height:18px;
-  left:61px;
-  top:-10px;
-  border-radius:50%;
-  transform:rotate(25deg);
-}
-
 @keyframes giftBounce{
-  50%{
-    transform:translateY(-10px) rotate(1deg);
-  }
+  50%{transform:translateY(-10px)}
 }
 
 @keyframes giftGlow{
-  from{
-    filter:drop-shadow(0 0 5px rgba(255,80,150,.4));
-  }
-  to{
-    filter:drop-shadow(0 0 20px rgba(255,80,150,.8));
-  }
+  from{filter:drop-shadow(0 0 5px rgba(255,80,150,.4))}
+  to{filter:drop-shadow(0 0 20px rgba(255,80,150,.9))}
 }
 
-/* ================= REVEAL ================= */
+/* REVEAL */
 
 .reveal{
   animation:cardReveal .9s ease;
@@ -218,27 +165,19 @@ button:active{
   }
 }
 
-/* ================= RESULT ================= */
+/* RESULT */
 
 .result-name{
   color:#e83e7b;
   font-size:clamp(28px,8vw,38px);
   font-weight:900;
-  margin:4px 0;
 }
 
 .result-box{
   margin:18px 0;
   padding:18px 10px;
   border-radius:20px;
-
-  background:linear-gradient(
-    135deg,
-    rgba(255,225,239,.9),
-    rgba(237,224,255,.9)
-  );
-
-  box-shadow:inset 0 0 20px rgba(255,255,255,.7);
+  background:linear-gradient(135deg,#ffe1ef,#eee0ff);
 }
 
 .marks{
@@ -249,56 +188,128 @@ button:active{
   margin:10px 0;
 }
 
-.board{
-  font-weight:700;
-  opacity:.75;
+.signature{
+  margin-top:22px;
+  font-size:19px;
+  font-weight:900;
+  color:#e83e7b;
 }
 
-/* ================= PARTY SCREEN ================= */
+/* PARTY CARD */
 
-#party{
+#partyGift{
   background:
-    radial-gradient(circle at 50% 100%,
-      #30205f 0%,
-      #120c2b 45%,
-      #050611 100%);
+    radial-gradient(circle at 50% 20%,#382064,#100b25 60%,#05050d);
   color:white;
-  overflow:hidden;
 }
 
 .party-card{
-  background:rgba(20,15,45,.70);
+  background:rgba(20,15,45,.75);
   color:white;
-
   border:1px solid rgba(255,255,255,.15);
-
   box-shadow:
-    0 0 40px rgba(150,100,255,.25),
+    0 0 45px rgba(150,100,255,.3),
     inset 0 0 30px rgba(255,255,255,.04);
 }
 
 .party-title{
   font-size:clamp(29px,9vw,43px);
   font-weight:1000;
-
-  background:linear-gradient(
-    90deg,
-    #ff77b7,
-    #ffe27a,
-    #9eeaff,
-    #d99cff
-  );
-
+  background:linear-gradient(90deg,#ff77b7,#ffe27a,#9eeaff,#d99cff);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 
-.party-sub{
-  color:#eee;
+.party-sub{color:#eee}
+
+/* PLAY BUTTON */
+
+.celebration-play{
+  width:210px;
+  height:210px;
+  margin:28px auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  cursor:pointer;
+  background:radial-gradient(
+    circle,
+    rgba(255,255,255,.25),
+    rgba(255,70,160,.18),
+    rgba(100,60,255,.25)
+  );
+  border:2px solid rgba(255,255,255,.35);
+  box-shadow:
+    0 0 25px rgba(255,100,190,.6),
+    0 0 65px rgba(120,80,255,.4),
+    inset 0 0 35px rgba(255,255,255,.12);
+  animation:partyPulse 1.5s infinite alternate;
 }
 
-/* ================= SKY ================= */
+.celebration-play:active{
+  transform:scale(.9);
+}
+
+.play-circle{
+  width:78px;
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff4f91,#9c6cff);
+  color:white;
+  font-size:34px;
+  padding-left:5px;
+  box-shadow:0 0 25px rgba(255,80,160,.9);
+}
+
+.play-text{
+  margin-top:15px;
+  font-size:15px;
+  font-weight:1000;
+  letter-spacing:1.5px;
+}
+
+@keyframes partyPulse{
+  to{
+    transform:scale(1.06);
+    box-shadow:
+      0 0 40px rgba(255,100,190,1),
+      0 0 90px rgba(120,80,255,.6);
+  }
+}
+
+/* FINAL PARTY */
+
+#party{
+  background:
+    radial-gradient(circle at 50% 100%,#30205f,#120c2b 45%,#050611);
+  color:white;
+  overflow:hidden;
+}
+
+#party.party-mode{
+  animation:partyFlash .6s infinite alternate;
+}
+
+@keyframes partyFlash{
+  0%{
+    background:
+      radial-gradient(circle at 20% 20%,#5b1b75,#070714 65%);
+  }
+  50%{
+    background:
+      radial-gradient(circle at 80% 30%,#172b78,#070714 65%);
+  }
+  100%{
+    background:
+      radial-gradient(circle at 50% 80%,#73194d,#070714 65%);
+  }
+}
 
 #sky{
   position:fixed;
@@ -307,8 +318,6 @@ button:active{
   pointer-events:none;
   z-index:1;
 }
-
-/* STARS */
 
 .star{
   position:absolute;
@@ -321,17 +330,11 @@ button:active{
 }
 
 @keyframes twinkle{
-  from{
-    opacity:.25;
-    transform:scale(.7);
-  }
   to{
     opacity:1;
     transform:scale(1.5);
   }
 }
-
-/* MOON */
 
 .moon{
   position:absolute;
@@ -340,23 +343,20 @@ button:active{
   width:75px;
   height:75px;
   border-radius:50%;
-
   background:#fff7c9;
-
   box-shadow:
     0 0 20px #fff7c9,
     0 0 55px rgba(255,245,180,.6);
+  z-index:2;
 }
 
-/* ================= FIREWORKS ================= */
+/* FIREWORKS */
 
 .firework{
   position:absolute;
   width:5px;
   height:5px;
   border-radius:50%;
-  background:white;
-  box-shadow:0 0 10px white;
   animation:explode 1.5s ease-out forwards;
 }
 
@@ -365,27 +365,12 @@ button:active{
   width:4px;
   height:4px;
   border-radius:50%;
-  background:white;
-  box-shadow:0 0 8px white;
-
   animation:sparkFly 1.1s ease-out forwards;
 }
 
 @keyframes explode{
-  0%{
-    transform:scale(.2);
-    opacity:1;
-  }
-
-  20%{
-    transform:scale(1);
-    opacity:1;
-  }
-
-  100%{
-    transform:scale(1.5);
-    opacity:0;
-  }
+  0%{transform:scale(.2);opacity:1}
+  100%{transform:scale(1.5);opacity:0}
 }
 
 @keyframes sparkFly{
@@ -393,27 +378,50 @@ button:active{
     transform:translate(0,0) scale(1);
     opacity:1;
   }
-
   100%{
-    transform:
-      translate(
-        var(--x),
-        var(--y)
-      )
-      scale(.2);
-
+    transform:translate(var(--x),var(--y)) scale(.2);
     opacity:0;
   }
 }
 
-/* ================= FLOATING HEARTS ================= */
+/* LIGHT BEAMS */
+
+.party-beam{
+  position:fixed;
+  width:45vw;
+  height:100vh;
+  top:0;
+  opacity:.14;
+  filter:blur(12px);
+  transform-origin:top center;
+  pointer-events:none;
+  z-index:2;
+  animation:beamDance 1.2s infinite alternate ease-in-out;
+}
+
+.beam-left{
+  left:-20vw;
+  background:linear-gradient(180deg,#ff3b91,transparent);
+  transform:rotate(25deg);
+}
+
+.beam-right{
+  right:-20vw;
+  background:linear-gradient(180deg,#5d7cff,transparent);
+  transform:rotate(-25deg);
+}
+
+@keyframes beamDance{
+  to{transform:rotate(-20deg) scale(1.2)}
+}
+
+/* FLOATING */
 
 .float{
   position:fixed;
   bottom:-30px;
-  z-index:3;
+  z-index:10;
   pointer-events:none;
-
   animation:floatUp linear forwards;
 }
 
@@ -422,21 +430,29 @@ button:active{
     transform:translateY(0) rotate(0);
     opacity:0;
   }
-
-  15%{
-    opacity:1;
-  }
-
+  15%{opacity:1}
   100%{
-    transform:
-      translateY(-115vh)
-      rotate(360deg);
-
+    transform:translateY(-115vh) rotate(360deg);
     opacity:0;
   }
 }
 
-/* ================= LOADING ================= */
+/* CONFETTI */
+
+.party-confetti{
+  position:fixed;
+  top:-20px;
+  pointer-events:none;
+  z-index:30;
+  animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+  100%{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
 
 .loading-heart{
   font-size:65px;
@@ -444,835 +460,660 @@ button:active{
 }
 
 @keyframes heartbeat{
-  0%,100%{
-    transform:scale(1);
-  }
-
-  25%{
-    transform:scale(1.18);
-  }
-
-  40%{
-    transform:scale(1);
-  }
-
-  60%{
-    transform:scale(1.12);
-  }
+  25%{transform:scale(1.18)}
+  40%{transform:scale(1)}
+  60%{transform:scale(1.12)}
 }
-
-/* ================= SIGNATURE ================= */
-
-.signature{
-  margin-top:22px;
-  font-size:19px;
-  font-weight:900;
-  color:#e83e7b;
-}
-
-/* ================= SMALL PHONES ================= */
 
 @media(max-height:650px){
-  .screen{
-    padding:12px;
-  }
-
-  .card{
-    padding:20px 16px;
-  }
-
-  .gift-wrap{
-    margin:20px auto 10px;
-  }
-
-  .party-card{
-    padding:18px 15px;
-  }
+  .screen{padding:12px}
+  .card{padding:20px 16px}
+  .gift-wrap{margin:20px auto 10px}
 }
+
+/* ================================================= */
+/* JAVASCRIPT */
+/* ================================================= */
 </style>
 </head>
 
 <body>
 
-<!-- ================================================= -->
 <!-- INTRO -->
-<!-- ================================================= -->
 
 <div id="intro" class="screen">
 
-  <div class="card reveal">
+<div class="card reveal">
 
-    <div style="font-size:60px">🎁</div>
+<div style="font-size:60px">🎁</div>
 
-    <h1>A Special Gift For You 💖</h1>
+<h1>A Special Gift For You 💖</h1>
 
-    <p>
-      <b>Your Brother Shaifan</b>
-      has prepared something special for you. 🌸
-    </p>
+<p>
+<b>Your Brother Shaifan</b>
+has prepared something special for you. 🌸
+</p>
 
-    <p>
-      Especially for<br>
-      <b>Laila (Javeria) ❤️</b>
-    </p>
+<p>
+Especially for<br>
+<b>Laila (Javeria) ❤️</b>
+</p>
 
-    <p>
-      Are you ready to open it? ✨
-    </p>
+<p>Are you ready to open it? ✨</p>
 
-    <button class="yes" onclick="openGift()">
-      Yes 💖
-    </button>
+<button class="yes" onclick="openGift()">Yes 💖</button>
 
-    <button id="noBtn" class="no" onclick="moveNo()">
-      No 🙈
-    </button>
+<button id="noBtn" class="no" onclick="moveNo()">No 🙈</button>
 
-    <p style="font-size:13px;opacity:.65">
-      Hint: There is only one correct choice 😄
-    </p>
+<p style="font-size:13px;opacity:.65">
+Hint: There is only one correct choice 😄
+</p>
 
-  </div>
-
+</div>
 </div>
 
 
-<!-- ================================================= -->
 <!-- FIRST GIFT -->
-<!-- ================================================= -->
 
 <div id="giftScreen" class="screen hidden">
 
-  <div class="card reveal">
+<div class="card reveal">
 
-    <div style="font-size:45px">
-      🌸✨🌷
-    </div>
+<div style="font-size:45px">🌸✨🌷</div>
 
-    <p style="font-weight:800">
-      A little surprise is waiting...
-    </p>
+<p><b>A little surprise is waiting...</b></p>
 
-    <div class="gift-wrap">
+<div class="gift-wrap">
 
-      <div class="gift" onclick="revealMessage()">
-        <div class="lid"></div>
-      </div>
-
-    </div>
-
-    <h1>
-      🎁 Open Your Gift
-    </h1>
-
-    <p>
-      Tap the gift box and discover your special surprise. 💖
-    </p>
-
-    <div class="signature">
-      Prepared by<br>
-      Your Brother Shaifan ❤️
-    </div>
-
-  </div>
+<div class="gift" onclick="revealMessage()">
+<div class="lid"></div>
+</div>
 
 </div>
 
+<h1>🎁 Open Your Gift</h1>
 
-<!-- ================================================= -->
-<!-- CINEMATIC LOADING -->
-<!-- ================================================= -->
+<p>
+Tap the gift box and discover your special surprise. 💖
+</p>
+
+<div class="signature">
+Prepared by<br>
+Your Brother Shaifan ❤️
+</div>
+
+</div>
+</div>
+
+
+<!-- LOADING -->
 
 <div id="loading" class="screen hidden">
 
-  <div class="card reveal">
+<div class="card reveal">
 
-    <div class="loading-heart">
-      ❤️
-    </div>
+<div class="loading-heart">❤️</div>
 
-    <h1>
-      One Little Surprise... ✨
-    </h1>
+<h1>One Little Surprise... ✨</h1>
 
-    <p>
-      Shaifan has something special
-      waiting for Laila...
-    </p>
+<p>
+Shaifan has something special
+waiting for Laila...
+</p>
 
-    <p id="loadingDots">
-      Preparing your surprise...
-    </p>
+<p>Preparing your surprise...</p>
 
-  </div>
-
+</div>
 </div>
 
 
-<!-- ================================================= -->
 <!-- RESULT -->
-<!-- ================================================= -->
 
 <div id="final" class="screen hidden">
 
-  <div class="card reveal">
+<div class="card reveal">
 
-    <div style="font-size:45px">
-      🌸💐🎓💖
-    </div>
+<div style="font-size:45px">🌸💐🎓💖</div>
 
-    <h1>
-      Congratulations! 🎉
-    </h1>
+<h1>Congratulations! 🎉</h1>
 
-    <div class="result-name">
-      Laila (Javeria) ❤️
-    </div>
+<div class="result-name">
+Laila (Javeria) ❤️
+</div>
 
-    <div class="result-box">
+<div class="result-box">
 
-      <div style="font-weight:900">
-        ✨ 11TH CLASS RESULT ✨
-      </div>
+<div><b>✨ 11TH CLASS RESULT ✨</b></div>
 
-      <div class="marks" id="marks">
-        0
-      </div>
+<div class="marks" id="marks">0</div>
 
-      <div class="board">
-        BISE Peshawar
-      </div>
+<div>BISE Peshawar</div>
 
-      <div style="margin-top:7px;font-weight:700">
-        Roll No: 301978
-      </div>
+<div style="margin-top:7px;font-weight:700">
+Roll No: 301978
+</div>
 
-    </div>
+</div>
 
-    <p>
-      🌷 This is a beautiful milestone.
-      Your effort, patience and hard work
-      deserve to be celebrated. ✨
-    </p>
+<p>
+🌷 This is a beautiful milestone.
+Your effort, patience and hard work
+deserve to be celebrated. ✨
+</p>
 
-    <p>
-      May the next chapter bring you
-      more success, happiness and
-      wonderful opportunities. 🌸
-    </p>
+<p>
+May the next chapter bring you
+more success, happiness and
+wonderful opportunities. 🌸
+</p>
 
-    <p>
-      <b>
-        Keep shining and keep believing
-        in yourself! 💕
-      </b>
-    </p>
+<p><b>
+Keep shining and keep believing in yourself! 💕
+</b></p>
 
-    <div class="signature">
+<div class="signature">
 
-      This surprise was made especially for you by
+This surprise was made especially for you by
 
-      <br><br>
+<br><br>
 
-      ❤️ Your Brother Shaifan ❤️
+❤️ Your Brother Shaifan ❤️
 
-      <br>
+<br>
 
-      With lots of love and best wishes 🌸
+With lots of love and best wishes 🌸
 
-    </div>
+</div>
 
-  </div>
-
+</div>
 </div>
 
 
 <!-- ================================================= -->
-<!-- SECOND GIFT / PARTY -->
+<!-- LAST GIFT: CELEBRATION BUTTON -->
 <!-- ================================================= -->
 
 <div id="partyGift" class="screen hidden">
 
-  <div class="card party-card reveal">
+<div class="card party-card reveal">
 
-    <div style="font-size:55px">
-      🎁🎉
-    </div>
+<div style="font-size:58px">
+🎁✨🎉
+</div>
 
-    <h1 class="party-title">
-      Wait... One More Surprise! ✨
-    </h1>
+<h1 class="party-title">
+One Last Surprise! 💖
+</h1>
 
-    <p class="party-sub">
-      The result celebration isn't over yet. 😄
-    </p>
+<p class="party-sub">
+The celebration is not over yet... 😍
+</p>
 
-    <div class="gift-wrap">
+<div
+class="celebration-play"
+onclick="startParty()">
 
-      <div class="gift" onclick="startParty()">
-        <div class="lid"></div>
-      </div>
+<div class="play-circle">
+▶
+</div>
 
-    </div>
+<div class="play-text">
+PLAY CELEBRATION
+</div>
 
-    <h1 style="font-size:26px">
-      🎉 Let's Have a Fun Party! 🎉
-    </h1>
+</div>
 
-    <p class="party-sub">
-      Tap the gift and watch the sky... 🌌✨
-    </p>
+<p class="party-sub">
+👆 Tap here for the final celebration!
+</p>
 
-    <div class="signature" style="color:#ffd6ec">
-      Your Brother Shaifan ❤️
-    </div>
+<div style="font-size:32px">
+🎆 ✨ 🎊 ✨ 🎆
+</div>
 
-  </div>
+<div class="signature" style="color:#ffd6ec">
+Especially for Laila ❤️
+<br><br>
+Your Brother Shaifan
+</div>
 
+</div>
 </div>
 
 
 <!-- ================================================= -->
-<!-- PARTY SKY -->
+<!-- FINAL PARTY: ABSOLUTELY LAST SCREEN -->
 <!-- ================================================= -->
 
 <div id="party" class="screen hidden">
 
-  <div id="sky"></div>
+<div id="sky"></div>
 
-  <div class="moon"></div>
+<div class="moon"></div>
 
-  <div class="card party-card reveal">
+<div class="card party-card reveal">
 
-    <div style="font-size:55px">
-      🎉🎆✨
-    </div>
+<div style="font-size:55px">
+🎉🎆✨
+</div>
 
-    <h1 class="party-title">
-      LET'S CELEBRATE! 🎉
-    </h1>
+<h1 class="party-title">
+LET'S CELEBRATE! 🎉
+</h1>
 
-    <h2>
-      Congratulations<br>
-      Laila (Javeria) ❤️
-    </h2>
+<h2>
+Congratulations<br>
+Laila (Javeria) ❤️
+</h2>
 
-    <p class="party-sub">
-      Tonight the sky is celebrating
-      your beautiful achievement! 🌌
-    </p>
+<p class="party-sub">
+The whole sky is celebrating
+your beautiful achievement! 🌌
+</p>
 
-    <p style="font-size:26px">
-      🎆 🎇 🎆
-    </p>
+<p style="font-size:32px">
+🎆 🎇 🎆
+</p>
 
-    <p class="party-sub">
-      460 Marks<br>
-      <b>BISE Peshawar</b>
-    </p>
+<p class="party-sub">
+<b>460 Marks</b><br>
+BISE Peshawar
+</p>
 
-    <p style="font-size:17px">
-      Keep smiling. 🌸<br>
-      Keep shining. ✨<br>
-      Keep moving forward. 💫
-    </p>
+<p style="font-size:18px">
+Keep smiling. 🌸<br>
+Keep shining. ✨<br>
+Keep moving forward. 💫
+</p>
 
-    <div class="signature" style="color:#ffd6ec">
+<div class="signature" style="color:#ffd6ec">
 
-      A special celebration<br>
-      from your brother
+A special celebration<br>
+from your brother
 
-      <br><br>
+<br><br>
 
-      ❤️ Your Brother Shaifan ❤️
+❤️ Your Brother Shaifan ❤️
 
-    </div>
+</div>
 
-    <p style="font-size:13px;color:#bbb">
-      🎆 Made with happiness, prayers and best wishes 🌸
-    </p>
+<p style="font-size:13px;color:#bbb">
+🎆 Made with happiness, prayers and best wishes 🌸
+</p>
 
-  </div>
-
+</div>
 </div>
 
 
 <script>
 
-/* ================================================= */
 /* NO BUTTON */
-/* ================================================= */
 
-let noCount = 0;
+let noCount=0;
 
 function moveNo(){
 
-  const button = document.getElementById("noBtn");
+const b=document.getElementById("noBtn");
 
-  noCount++;
+noCount++;
 
-  button.style.position = "fixed";
+b.style.position="fixed";
 
-  const padding = 20;
+const pad=20;
 
-  const maxX =
-    window.innerWidth -
-    button.offsetWidth -
-    padding;
+const maxX=
+window.innerWidth-b.offsetWidth-pad;
 
-  const maxY =
-    window.innerHeight -
-    button.offsetHeight -
-    padding;
+const maxY=
+window.innerHeight-b.offsetHeight-pad;
 
-  button.style.left =
-    Math.max(
-      padding,
-      Math.random() * maxX
-    ) + "px";
+b.style.left=
+Math.max(pad,Math.random()*maxX)+"px";
 
-  button.style.top =
-    Math.max(
-      padding,
-      Math.random() * maxY
-    ) + "px";
+b.style.top=
+Math.max(pad,Math.random()*maxY)+"px";
 
-  button.textContent =
-    noCount < 4
-      ? "No 🙈"
-      : "Still no? 😄";
+b.textContent=
+noCount<4?"No 🙈":"Still no? 😄";
 }
 
 
-/* ================================================= */
-/* OPEN FIRST GIFT */
-/* ================================================= */
+/* FIRST GIFT */
 
 function openGift(){
 
-  document.getElementById("intro")
-    .classList.add("hidden");
+document.getElementById("intro")
+.classList.add("hidden");
 
-  document.getElementById("giftScreen")
-    .classList.remove("hidden");
+document.getElementById("giftScreen")
+.classList.remove("hidden");
 
-  floatingHearts();
-
+floatingHearts();
 }
 
 
-/* ================================================= */
-/* RESULT LOADING */
-/* ================================================= */
+/* RESULT */
 
 function revealMessage(){
 
-  document.getElementById("giftScreen")
-    .classList.add("hidden");
+document.getElementById("giftScreen")
+.classList.add("hidden");
 
-  document.getElementById("loading")
-    .classList.remove("hidden");
+document.getElementById("loading")
+.classList.remove("hidden");
 
-  setTimeout(function(){
+setTimeout(function(){
 
-    document.getElementById("loading")
-      .classList.add("hidden");
+document.getElementById("loading")
+.classList.add("hidden");
 
-    document.getElementById("final")
-      .classList.remove("hidden");
+document.getElementById("final")
+.classList.remove("hidden");
 
-    animateMarks();
+animateMarks();
 
-    resultBurst();
+resultBurst();
 
-  },3000);
+/* After result, show the LAST gift */
 
+setTimeout(function(){
+
+document.getElementById("final")
+.classList.add("hidden");
+
+document.getElementById("partyGift")
+.classList.remove("hidden");
+
+},6500);
+
+},3000);
 }
 
 
-/* ================================================= */
-/* MARKS 0 → 460 */
-/* ================================================= */
+/* MARKS */
 
 function animateMarks(){
 
-  const marksElement =
-    document.getElementById("marks");
+const el=document.getElementById("marks");
 
-  const target = 460;
+const target=460;
+const duration=2600;
+const start=performance.now();
 
-  const duration = 2600;
+function update(time){
 
-  const start = performance.now();
+const progress=
+Math.min((time-start)/duration,1);
 
-  function update(time){
+const eased=
+1-Math.pow(1-progress,3);
 
-    const progress =
-      Math.min(
-        (time - start) / duration,
-        1
-      );
+el.textContent=
+Math.floor(target*eased);
 
-    const eased =
-      1 - Math.pow(1 - progress,3);
+if(progress<1){
+requestAnimationFrame(update);
+}else{
+el.textContent=target;
+}
 
-    const value =
-      Math.floor(target * eased);
+}
 
-    marksElement.textContent =
-      value;
-
-    if(progress < 1){
-
-      requestAnimationFrame(update);
-
-    }else{
-
-      marksElement.textContent =
-        target;
-
-    }
-
-  }
-
-  requestAnimationFrame(update);
+requestAnimationFrame(update);
 }
 
 
-/* ================================================= */
-/* RESULT CELEBRATION */
-/* ================================================= */
+/* RESULT EFFECT */
 
 function resultBurst(){
 
-  for(let i=0;i<35;i++){
-
-    setTimeout(
-      createFloating,
-      i * 80
-    );
-
-  }
+for(let i=0;i<35;i++){
+setTimeout(createFloating,i*80);
+}
 
 }
 
 
-/* ================================================= */
-/* FLOATING HEARTS / FLOWERS */
-/* ================================================= */
+/* FLOATING */
 
 function floatingHearts(){
 
-  for(let i=0;i<20;i++){
-
-    setTimeout(
-      createFloating,
-      i * 180
-    );
-
-  }
+for(let i=0;i<20;i++){
+setTimeout(createFloating,i*180);
+}
 
 }
 
 function createFloating(){
 
-  const element =
-    document.createElement("div");
+const el=document.createElement("div");
 
-  element.className = "float";
+el.className="float";
 
-  const items = [
-    "💖",
-    "❤️",
-    "🌸",
-    "🌷",
-    "✨",
-    "💐"
-  ];
+const items=[
+"💖","❤️","🌸","🌷","✨","💐"
+];
 
-  element.textContent =
-    items[
-      Math.floor(
-        Math.random() * items.length
-      )
-    ];
+el.textContent=
+items[Math.floor(Math.random()*items.length)];
 
-  element.style.left =
-    Math.random() * 100 + "vw";
+el.style.left=
+Math.random()*100+"vw";
 
-  element.style.fontSize =
-    (18 + Math.random()*22) + "px";
+el.style.fontSize=
+(18+Math.random()*22)+"px";
 
-  element.style.animationDuration =
-    (4 + Math.random()*4) + "s";
+el.style.animationDuration=
+(4+Math.random()*4)+"s";
 
-  document.body.appendChild(element);
+document.body.appendChild(el);
 
-  setTimeout(
-    () => element.remove(),
-    8500
-  );
-
+setTimeout(()=>el.remove(),8500);
 }
 
 
 /* ================================================= */
-/* AFTER RESULT → SECOND GIFT */
-/* ================================================= */
-
-setTimeout(function(){
-
-  const observer =
-    new MutationObserver(function(){
-
-      const final =
-        document.getElementById("final");
-
-      if(
-        !final.classList.contains("hidden")
-      ){
-
-        setTimeout(function(){
-
-          final.classList.add("hidden");
-
-          document.getElementById("partyGift")
-            .classList.remove("hidden");
-
-        },5500);
-
-        observer.disconnect();
-
-      }
-
-    });
-
-  observer.observe(
-    document.body,
-    {
-      attributes:true,
-      subtree:true,
-      attributeFilter:["class"]
-    }
-  );
-
-},100);
-
-
-/* ================================================= */
-/* START PARTY */
+/* FINAL CELEBRATION */
 /* ================================================= */
 
 function startParty(){
 
-  document.getElementById("partyGift")
-    .classList.add("hidden");
+document.getElementById("partyGift")
+.classList.add("hidden");
 
-  document.getElementById("party")
-    .classList.remove("hidden");
+const party=document.getElementById("party");
 
-  createStars();
+party.classList.remove("hidden");
+party.classList.add("party-mode");
 
-  launchFireworks();
+createStars();
 
-  setInterval(
-    launchFireworks,
-    950
-  );
+/* LIGHT BEAMS */
 
-  setInterval(
-    partyFloating,
-    500
-  );
+const left=document.createElement("div");
+left.className="party-beam beam-left";
+document.body.appendChild(left);
 
+const right=document.createElement("div");
+right.className="party-beam beam-right";
+document.body.appendChild(right);
+
+/* FIREWORKS */
+
+launchFireworks();
+
+setInterval(launchFireworks,700);
+
+/* FLOATING */
+
+setInterval(partyFloating,350);
+
+/* CONFETTI */
+
+setInterval(createPartyConfetti,180);
 }
 
 
-/* ================================================= */
 /* STARS */
-/* ================================================= */
 
 function createStars(){
 
-  const sky =
-    document.getElementById("sky");
+const sky=document.getElementById("sky");
 
-  for(let i=0;i<90;i++){
+for(let i=0;i<100;i++){
 
-    const star =
-      document.createElement("div");
+const star=document.createElement("div");
 
-    star.className = "star";
+star.className="star";
 
-    star.style.left =
-      Math.random()*100 + "%";
+star.style.left=
+Math.random()*100+"%";
 
-    star.style.top =
-      Math.random()*75 + "%";
+star.style.top=
+Math.random()*80+"%";
 
-    star.style.animationDelay =
-      Math.random()*2 + "s";
+star.style.animationDelay=
+Math.random()*2+"s";
 
-    sky.appendChild(star);
-
-  }
-
+sky.appendChild(star);
+}
 }
 
 
-/* ================================================= */
 /* FIREWORKS */
-/* ================================================= */
 
 function launchFireworks(){
 
-  const sky =
-    document.getElementById("sky");
+const sky=document.getElementById("sky");
 
-  const x =
-    10 + Math.random()*80;
+const x=8+Math.random()*84;
+const y=12+Math.random()*52;
 
-  const y =
-    15 + Math.random()*48;
+const colors=[
+"#ff5c93",
+"#ffd166",
+"#6ee7ff",
+"#c084fc",
+"#7cff9b"
+];
 
-  const colors = [
-    "#ff5c93",
-    "#ffd166",
-    "#6ee7ff",
-    "#c084fc",
-    "#7cff9b"
-  ];
+const color=
+colors[Math.floor(Math.random()*colors.length)];
 
-  const color =
-    colors[
-      Math.floor(
-        Math.random()*colors.length
-      )
-    ];
+const center=document.createElement("div");
 
-  const center =
-    document.createElement("div");
+center.className="firework";
 
-  center.className =
-    "firework";
+center.style.left=x+"%";
+center.style.top=y+"%";
 
-  center.style.left =
-    x + "%";
+center.style.background=color;
+center.style.boxShadow=
+"0 0 18px "+color;
 
-  center.style.top =
-    y + "%";
+sky.appendChild(center);
 
-  center.style.background =
-    color;
-
-  center.style.boxShadow =
-    "0 0 18px " + color;
-
-  sky.appendChild(center);
-
-  setTimeout(
-    () => center.remove(),
-    1500
-  );
+setTimeout(()=>center.remove(),1500);
 
 
-  /* Create sparks */
+/* SPARKS */
 
-  for(let i=0;i<32;i++){
+for(let i=0;i<36;i++){
 
-    const spark =
-      document.createElement("div");
+const spark=document.createElement("div");
 
-    spark.className =
-      "spark";
+spark.className="spark";
 
-    spark.style.left =
-      x + "%";
+spark.style.left=x+"%";
+spark.style.top=y+"%";
 
-    spark.style.top =
-      y + "%";
+spark.style.background=color;
+spark.style.boxShadow=
+"0 0 10px "+color;
 
-    spark.style.background =
-      color;
+const angle=
+(Math.PI*2*i)/36;
 
-    spark.style.boxShadow =
-      "0 0 10px " + color;
+const distance=
+50+Math.random()*110;
 
-    const angle =
-      (Math.PI * 2 * i) / 32;
+spark.style.setProperty(
+"--x",
+Math.cos(angle)*distance+"px"
+);
 
-    const distance =
-      50 + Math.random()*90;
+spark.style.setProperty(
+"--y",
+Math.sin(angle)*distance+"px"
+);
 
-    spark.style.setProperty(
-      "--x",
-      Math.cos(angle) * distance + "px"
-    );
+spark.style.animationDelay=
+Math.random()*.15+"s";
 
-    spark.style.setProperty(
-      "--y",
-      Math.sin(angle) * distance + "px"
-    );
+sky.appendChild(spark);
 
-    spark.style.animationDelay =
-      Math.random() * .15 + "s";
-
-    sky.appendChild(spark);
-
-    setTimeout(
-      () => spark.remove(),
-      1400
-    );
-
-  }
-
+setTimeout(()=>spark.remove(),1400);
+}
 }
 
 
-/* ================================================= */
-/* PARTY FLOATING EFFECT */
-/* ================================================= */
+/* PARTY FLOATING */
 
 function partyFloating(){
 
-  const items = [
-    "❤️",
-    "💖",
-    "✨",
-    "🌸",
-    "🎉",
-    "🎊"
-  ];
+const items=[
+"❤️","💖","✨","🌸","🎉","🎊","⭐","💫"
+];
 
-  const element =
-    document.createElement("div");
+const el=document.createElement("div");
 
-  element.className =
-    "float";
+el.className="float";
 
-  element.textContent =
-    items[
-      Math.floor(
-        Math.random()*items.length
-      )
-    ];
+el.textContent=
+items[Math.floor(Math.random()*items.length)];
 
-  element.style.left =
-    Math.random()*100 + "vw";
+el.style.left=
+Math.random()*100+"vw";
 
-  element.style.fontSize =
-    (18 + Math.random()*22) + "px";
+el.style.fontSize=
+(18+Math.random()*25)+"px";
 
-  element.style.animationDuration =
-    (4 + Math.random()*3) + "s";
+el.style.animationDuration=
+(4+Math.random()*3)+"s";
 
-  document.body.appendChild(element);
+document.body.appendChild(el);
 
-  setTimeout(
-    () => element.remove(),
-    7500
-  );
+setTimeout(()=>el.remove(),7500);
+}
 
+
+/* CONFETTI */
+
+function createPartyConfetti(){
+
+const items=[
+"🎉","🎊","✨","💖","🌸","⭐","💫"
+];
+
+const el=document.createElement("div");
+
+el.className="party-confetti";
+
+el.textContent=
+items[Math.floor(Math.random()*items.length)];
+
+el.style.left=
+Math.random()*100+"vw";
+
+el.style.fontSize=
+(15+Math.random()*25)+"px";
+
+el.style.animationDuration=
+(2+Math.random()*2)+"s";
+
+document.body.appendChild(el);
+
+setTimeout(()=>el.remove(),4500);
 }
 
 </script>
